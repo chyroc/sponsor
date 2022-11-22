@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf ./dist && npm run build:css && cp ./src/static/* ./dist/static && cp ./src/index.html ./dist",
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/static/output.css"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/chyroc/sponsor/issues"
   },
-  "homepage": "https://github.com/chyroc/sponsor#readme"
+  "homepage": "https://github.com/chyroc/sponsor#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19"
+  }
 }
