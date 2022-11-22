@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "npm run build && serve ./dist",
     "build": "rm -rf ./dist && npm run build:css && cp ./src/static/* ./dist/static && cp ./src/index.html ./dist",
     "build:css": "tailwindcss -i ./src/input.css -o ./dist/static/output.css"
   },
